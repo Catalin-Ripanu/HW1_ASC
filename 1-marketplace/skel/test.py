@@ -51,7 +51,7 @@ def main():
 
     # build the marketplace
     marketplace = Marketplace(**market_config['marketplace'])
-
+    
     # build and start the producers
     producers = [Producer(**p_market_config, marketplace=marketplace, daemon=True)
                  for p_market_config in market_config['producers']]
