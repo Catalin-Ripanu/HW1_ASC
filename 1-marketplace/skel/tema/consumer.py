@@ -42,11 +42,9 @@ class Consumer(Thread):
         self.retry_wait_time = retry_wait_time
 
     def run(self):
-        for elem in range(len(self.carts)):
+        for _, cart in enumerate(self.carts):
             cart_id = self.marketplace.new_cart()
-            cart = self.carts[elem]
-            for oper_elem in range(len(cart)):
-                operation = cart[oper_elem]
+            for _, operation in enumerate(cart):
                 quantity = operation["quantity"]
                 while quantity > 0:
                     result = self.functions[operation["type"]](
