@@ -9,6 +9,7 @@ March 2021
 from threading import Thread
 from time import sleep
 
+
 class Consumer(Thread):
     """
     Class that represents a consumer.
@@ -33,9 +34,11 @@ class Consumer(Thread):
         """
         Thread.__init__(self, **kwargs)
         self.carts = carts
-        self.functions = {"remove" : self.marketplace.remove_from_cart,
-                          "add" : self.marketplace.add_to_cart}
         self.marketplace = marketplace
+        self.functions = {
+            "remove": self.marketplace.remove_from_cart,
+            "add": self.marketplace.add_to_cart,
+        }
         self.retry_wait_time = retry_wait_time
 
     def run(self):
@@ -46,12 +49,11 @@ class Consumer(Thread):
                 operation = cart[oper_elem]
                 quantity = operation["quantity"]
                 while quantity > 0:
-                    result = self.functions[operation["type"]](cart, operation["product"])
+                    result = self.functions[operation["type"]](
+                        cart_id, operation["product"]
+                    )
                     if result or result is None:
                         quantity -= 1
                     else:
                         sleep(self.retry_wait_time)
             self.marketplace.place_order(cart_id)
-
-            
-
