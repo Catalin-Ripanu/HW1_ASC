@@ -9,6 +9,7 @@ March 2021
 from threading import Lock, currentThread
 import unittest
 import logging
+import time
 from logging.handlers import RotatingFileHandler
 from .product import Product
 
@@ -129,14 +130,22 @@ class Marketplace:
         :type queue_size_per_producer: Int
         :param queue_size_per_producer: the maximum size of a queue associated with each producer
         """
+
         file_handler = RotatingFileHandler(
             "marketplace.log",
             mode="a",
-            maxBytes=1000,
+            maxBytes=2000,
             backupCount=10,
             encoding="utf-8",
             delay=False,
         )
+        file_handler.setLevel(logging.INFO)
+        formatter = logging.Formatter('%(asctime)s %(levelname)8s: %(message)s')
+        file_handler.setFormatter(formatter)
+        logging.Formatter.converter = time.gmtime
+        self.logger = logging.getLogger("logger")
+        self.logger.addHandler(file_handler)
+        self.logger.setLevel(logging.INFO)
         self.num_carts = 0
         self.queue_size_per_producer = queue_size_per_producer
         self.marketplace_products = []
@@ -159,6 +168,7 @@ class Marketplace:
             current_id = len(self.producers_queue_size)
             self.producers_queue_size[current_id] = 0
         self.producers_products[None] = current_id
+        self.logger.info("The return value of register_producer method: %s", current_id)
         return current_id
 
     def publish(self, producer_id, product):
