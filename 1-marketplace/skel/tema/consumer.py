@@ -42,6 +42,11 @@ class Consumer(Thread):
         self.retry_wait_time = retry_wait_time
 
     def run(self):
+        """
+        Creates a new cart and then performs the specified operations on it.
+        If the operation fails, the consumer sleeps 'retry_wait_time' seconds.
+        When all the operations have been done, the consumer places the cart's order.
+        """
         for _, cart in enumerate(self.carts):
             cart_id = self.marketplace.new_cart()
             for _, operation in enumerate(cart):

@@ -39,6 +39,12 @@ class Producer(Thread):
         self.prod_id = marketplace.register_producer()
 
     def run(self):
+        """
+        Takes a product from the list and then publishes it in the Marketplace.
+        If the operation fails, the producer sleeps 'republish_wait_time' seconds.
+        If the operation succeeds, the producers sleeps 'wait_time' seconds.
+        'wait_time' is a time associated with the current product.
+        """
         while 1:
             for product, quantity, wait_time in self.products:
                 cnt = quantity
