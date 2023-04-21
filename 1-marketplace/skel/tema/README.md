@@ -58,9 +58,13 @@ returnată consumatorului.
 
 ### Resurse Utilizate
 1: https://ocw.cs.pub.ro/courses/asc/laboratoare/01
+
 2: https://ocw.cs.pub.ro/courses/asc/laboratoare/02
+
 3: https://docs.python.org/3/library/logging.html
+
 4: https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler
+
 5: https://docs.python.org/3/howto/logging.html
 
 ### Git
