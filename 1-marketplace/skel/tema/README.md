@@ -67,4 +67,4 @@ returnată consumatorului.
 [1]: https://github.com/CatalinACS/Tema1-ASC
 
 ### Link Drive ce conține .git-ul
-[1]:
+[1]: https://drive.google.com/drive/folders/1WrUFB_kFoUmdE8Yxhr66Igg-tQwPOTrX?usp=share_link
