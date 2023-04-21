@@ -57,14 +57,14 @@ afișate la stream-ul de output înainte ca lista care modelează coșul să fie
 returnată consumatorului.
 
 ### Resurse Utilizate
-[1]: https://ocw.cs.pub.ro/courses/asc/laboratoare/01
-[2]: https://ocw.cs.pub.ro/courses/asc/laboratoare/02
-[3]: https://docs.python.org/3/library/logging.html
-[4]: https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler
-[5]: https://docs.python.org/3/howto/logging.html
+1: https://ocw.cs.pub.ro/courses/asc/laboratoare/01
+2: https://ocw.cs.pub.ro/courses/asc/laboratoare/02
+3: https://docs.python.org/3/library/logging.html
+4: https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler
+5: https://docs.python.org/3/howto/logging.html
 
 ### Git
-[1]: https://github.com/CatalinACS/Tema1-ASC
+1: https://github.com/CatalinACS/Tema1-ASC
 
 ### Link Drive ce conține .git-ul
-[1]: https://drive.google.com/drive/folders/1WrUFB_kFoUmdE8Yxhr66Igg-tQwPOTrX?usp=share_link
+1: https://drive.google.com/drive/folders/1WrUFB_kFoUmdE8Yxhr66Igg-tQwPOTrX?usp=share_link
